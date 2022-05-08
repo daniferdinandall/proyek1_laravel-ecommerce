@@ -33,7 +33,8 @@ class CheckoutController extends Controller
             Stripe::charges()->create([
                 'amount' => Cart::total(),
                 'currency' => 'USD',
-                'source' => $request->stripeToken,
+                // 'source' => $request->stripeToken,
+                'source' => 'tok_visa',
                 'description' => 'Some Text',
                 'metadata' => [
                     'contents' => $contents,
